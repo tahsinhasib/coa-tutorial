@@ -7,21 +7,22 @@
 
 .MODEL SMALL 
 .STACK 100H
-.DATA
 
- 
+.DATA
 MSG DB 'HELLO!$'
+
+
 .CODE 
-MAIN PROC
-    ;initialize DS
-        MOV AX, @DATA
-        MOV DS, AX          ; initialize DS
-    ;display message
-        LEA DX, MSG         ;get message
-        MOV AH, 9           ;disply string function
-        INT 21h             ;display message
-    ;return to DOS
-        MOV AH, 4CH
-        INT 21h             ;DOS exit
-MAIN ENDP
+    MAIN PROC
+        ;initialize DS
+            MOV AX, @DATA
+            MOV DS, AX          ; initialize DS
+        ;display message
+            LEA DX, MSG         ;get message
+            MOV AH, 9           ;disply string function
+            INT 21h             ;display message
+        ;return to DOS
+            MOV AH, 4CH
+            INT 21h             ;DOS exit
+    MAIN ENDP
     END MAIN
