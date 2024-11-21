@@ -9,6 +9,13 @@
 
 MSG1 DB 0DH, 0AH, 'ENTER A LOWER CASE LETTER: $';
 MSG2 DB 0DH, 0AH, 'IT IS IN UPPER CASE: $';
+
+
+
+MSG3 DB 0DH, 0AH, 'ENTER A UPPER CASE LETTER: $';
+MSG4 DB 0DH, 0AH, 'IT IS IN LOWER CASE: $';
+
+
 CHAR DB ?, '$';
 
 
@@ -16,7 +23,7 @@ CHAR DB ?, '$';
 
     MAIN PROC
         
-        ;INITIALIZE
+        ;------------------INITIALIZE
         MOV AX, @DATA;
         MOV DS, AX;
         
@@ -31,11 +38,6 @@ CHAR DB ?, '$';
         MOV AH, 1;
         INT 21H;
         
-        
-        ;INPUT A CHARACTER
-        ;MOV AH, 1;
-        ;INT 21H;
-        ;step wise line executes
         
         
         ;CONVERT TO UPPER CASE
@@ -53,7 +55,7 @@ CHAR DB ?, '$';
         INT 21H;
         
         
-        ;DOS EXIT
+        ;-------------------DOS EXIT
         MOV AH, 4CH;
         INT 21H;
         
