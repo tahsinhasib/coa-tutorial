@@ -1,0 +1,67 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+ 
+ MSG1 DB 'ENTER THREE INITIALS: $'
+
+ 
+.CODE
+MAIN PROC
+    
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV AH,9;FOR SHOWING STRING
+    LEA DX,MSG1
+    INT 21H
+    
+    MOV AH,1; TAKING INPUTS OF INITIALS WITHOUT NEXT LINE
+    INT 21H
+    MOV BL,AL
+    
+    INT 21H
+    MOV BH,AL
+    
+    INT 21H
+    MOV CL,AL
+    
+    MOV AH,2;FOR NEW LINE
+    MOV DL,0AH
+    INT 21H
+    MOV DL,0DH
+    INT 21H
+    
+    
+    MOV AH,2;FOR SHOWING FIRST INITIAL
+    MOV DL,BL
+    INT 21H
+    
+    ;FOR NEW LINE
+    MOV DL,0AH
+    INT 21H
+    MOV DL,0DH
+    INT 21H
+    
+    
+    ;FOR SHOWING SECOND INITIAL
+    MOV DL,BH
+    INT 21H
+    
+    ;FOR NEW LINE
+    MOV DL,0AH
+    INT 21H
+    MOV DL,0DH
+    INT 21H
+    
+    ;FOR SHOWING THIRD INTITIAL
+    MOV DL,CL
+    INT 21H 
+    
+    
+     
+    
+    MOV AH,4CH
+    INT 21H
+    
+    MAIN ENDP
+END MAIN
