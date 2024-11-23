@@ -1,2 +1,8 @@
-# computer-organization-and-architecture-resources
-Contains my academic resources for computer organization and architecture
+# Documentaion
+<table>
+    <tr>
+        <td>Display character function</td>
+        <td>MOV AH, 2</td>
+        <td>INT 21H</td>
+    </tr>
+</table>
