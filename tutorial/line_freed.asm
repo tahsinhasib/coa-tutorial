@@ -6,11 +6,7 @@
 
 .CODE
     MAIN PROC
-        ;display promt
-        MOV AH, 2;          display character function
-        MOV DL, '?';        character is '?'
-        INT 21H;            display character
-        
+      
         ;input a character
         MOV AH, 1;          input key function
         INT 21H;            ASCII Code in AL
@@ -24,8 +20,8 @@
         INT 21H;            execute
 
         ;display character
-        MOV DL, BL;
-        INT 21H;
+        MOV DL, BL;         get character
+        INT 21H;            display it
 
         ;return to dos
         MOV AH, 4CH;
