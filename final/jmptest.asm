@@ -1,17 +1,18 @@
-.model small
-.stack 100h
-.data
-.code
+.MODEL SMALL
+.STACK 100H
+.DATA
+.CODE
 
-main proc
-    mov ah,2
-    mov cx,256
-    mov dl,0
-    printloop:
-    int 21h
-    inc dl
-    dec  cx
-    jnz printloop
-    mov ah,4ch
-    main endp
-end main
+MAIN PROC
+
+    MOV AH,2
+    MOV CX,256
+    MOV DL,0
+    PRINTLOOP:
+    INT 21H
+    INC DL
+    DEC  CX
+    JNZ PRINTLOOP
+    MOV AH,4CH
+    MAIN ENDP
+END MAIN
