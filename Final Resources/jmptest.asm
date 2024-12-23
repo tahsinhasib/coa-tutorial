@@ -1,18 +1,24 @@
 .MODEL SMALL
 .STACK 100H
+
 .DATA
+
 .CODE
 
 MAIN PROC
 
-    MOV AH,2
-    MOV CX,256
-    MOV DL,0
+    MOV AH, 2
+    MOV CX, 256
+    MOV DL, 0
+
     PRINTLOOP:
+
     INT 21H
     INC DL
     DEC  CX
     JNZ PRINTLOOP
-    MOV AH,4CH
+
+    MOV AH, 4CH
+
     MAIN ENDP
 END MAIN

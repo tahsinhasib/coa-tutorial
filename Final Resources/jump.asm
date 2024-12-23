@@ -20,3 +20,13 @@ DEF: MOV DX, 5678H;
 
 
 ABC: MOV DX, 5678;
+MOV AH, 09H
+
+
+;copilot test here
+LEA DX, helloMessage
+INT 21H
+RET
+
+helloMessage DB 'Hello, world!$'
+;----------------------------------
