@@ -31,10 +31,12 @@ jna_msg DB 0DH, 0AH, "jump if not above$";                            CF = 1, ZF
     MOV DS, AX
 
     ; Initialize the registers
-    MOV AX, 5
-    MOV BX, 10
+    MOV DL, 5
+    MOV AL, DL
+    MOV DL, 5
+    MOV BL, DL
     
-    CMP AX, BX
+    CMP AL, BL
 
     ; Jump labels
     JG JG_LABEL
