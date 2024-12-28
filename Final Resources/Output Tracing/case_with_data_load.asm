@@ -18,8 +18,10 @@ MAIN PROC
     
     MOV AH, 9               ; For displaying string
     
-    LD AX, -3
-    CMP AX, 0
+    MOV DL, -3
+    MOV AL, DL
+    
+    CMP AL, 0
     
     JL NEGATIVE
     JE ZERO
