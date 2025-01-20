@@ -21,7 +21,7 @@ INPUT:
 
     ; INITIALIZE REGISTERS
     ;XOR BX, BX       ; Clear BX (to store binary result)
-    MOV CX, 2         ; Maximum of 4 hex digits (2 bytes)
+    MOV CX, 4         ; Maximum of 4 hex digits (2 bytes)
 
 READ_DIGIT:
     MOV AH, 01H       ; Function to read a character
