@@ -2,6 +2,7 @@
 .STACK 100H
 
 .DATA
+msg1 DB 0DH, 0AH, "Display: $"
 
 .CODE
     MAIN PROC
@@ -23,14 +24,22 @@
         CMP AL, '4'
         JE EVEN
     
-        JMP END_CASE
-    
+        JMP END_CASE 
+        
         ODD:
+            MOV AH, 9
+            LEA DX, msg1
+            INT 21H
+            
             MOV AH, 2
             MOV DL, 'O'
             JMP DISPLAY
     
         EVEN:
+            MOV AH, 9
+            LEA DX, msg1
+            INT 21H
+            
             MOV AH, 2
             MOV DL, 'E'
             JMP DISPLAY

@@ -1,8 +1,3 @@
-;Write an assembly language program that prompts the user to enter a letter. 
-;If the entered letter is 'y' or 'Y', the program should display 'You entered: ' 
-;followed by the entered letter. If the entered letter is not 'y' or 'Y', the 
-;program should display 'Not y or Y'. The program should then terminate.
-
 
 .MODEL SMALL
 .STACK 100H
